@@ -1,6 +1,9 @@
+<% session[:user_id].inspect %>
 <h1>Browse Cuisine</h1>
 
 <% @cuisine_types.each do |cuisine_type| %>
+	<a href="/cuisine_types/<%= cuisine_type.id %>">
 	<p><%= cuisine_type.name %></p>
+	</a>
 
 <% end %>

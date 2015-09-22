@@ -8,6 +8,17 @@
 </head>
 <body>
 
+<!--need to add the navbar class in css-->
+<!-- also need to fix my paths with my routes-->
+
+<p class="navbar">
+<% if current_user %>
+	<%= link_to "Logout", logout_path, method: :delete %>
+	<% else %>
+		<%= link_to "Sign Up", new_restaurant_user_path %>
+		<%= link_to "Login", login_path %>
+	<% end %>
+
 <%= yield %>
 
 </body>

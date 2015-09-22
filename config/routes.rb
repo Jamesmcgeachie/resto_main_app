@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
 
-  get 'cuisine_types' => 'cuisine_types#index'
-  get 'cuisine_types/:id' => 'cuisine_types#show'
+  resources :cuisine_types, only: [:index, :show]
+  get '/login' => 'sessions#new', as: :login
+  post '/login' =>  'sessions#create', as: :post_login
+  delete '/loguout' => 'sessions#destroy', as: :logout
+  resources :sessions, only: [:new, :create, :destroy]
+  resources :restaurants do
+    resources :reservations
+  resources :users, only: [:new, :create]
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

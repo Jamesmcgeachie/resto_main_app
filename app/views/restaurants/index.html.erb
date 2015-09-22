@@ -1,0 +1,13 @@
+<h1>All Restaurants</h1>
+
+<% if @restaurants.count > 0 %>
+	<% @restaurants.order(name: :asc).each do |restaurant| %>
+         <p>
+         <a href="/restaurants/<%= restaurant.id %>">
+         <%= restaurant.name %>
+         </a>
+         </p>
+    <% end %>
+<% else %>
+        <p>No Restaurants in database</p>
+<% end %>

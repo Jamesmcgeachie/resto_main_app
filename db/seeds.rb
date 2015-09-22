@@ -5,3 +5,16 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+cuisines = ["Thai", "Italian", "Continental"]
+cuisines.each do |name|
+	CuisineType.create(name: name)
+end
+
+20.times do
+	r = Restaurant.new
+	r.name = Faker::Company.name
+	r.capacity = rand(5..20)
+	r.cuisine_type_id = CuisineType.first.id
+	r.save
+end

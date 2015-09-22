@@ -1,3 +1,17 @@
-<h1><%= @cuisine_type.name %>Restaurants</h1>
+<h1><%= @cuisine_type.name %> Restaurants</h1>
 
-<
+<table border = "1">
+	<tr>
+	<td>Restaurant name:</td>
+	<td>Capacity</td>
+	</tr>
+<% @cuisine_type.restaurants.order(name: :asc).each do |restaurant| %>
+	<tr>
+	<td>
+	<a href="/restaurants/<%= restaurant.id %>">
+	<%= restaurant.name %></td>
+	</a>
+	<td><%= restaurant.capacity %></td>
+	</tr>
+<% end %>
+	</table>
