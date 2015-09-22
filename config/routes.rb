@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :users, only: [:new, :create]
   resources :cuisine_types, only: [:index, :show]
   get '/login' => 'sessions#new', as: :login
   post '/login' =>  'sessions#create', as: :post_login
@@ -7,7 +8,6 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :restaurants do
     resources :reservations
-  resources :users, only: [:new, :create]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
