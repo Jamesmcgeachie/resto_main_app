@@ -1,5 +1,8 @@
 class ReservationsController < ApplicationController
 
+	# this line is to check if user authenticated first
+	before_action :authenticate_user
+
 	def index
 		@restaurant = Restaurant.find(params[:restaurant_id])
 		@reservations = @restaurant.reservations
