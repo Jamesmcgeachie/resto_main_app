@@ -1,10 +1,19 @@
 <h1> Reservations for <%= @restaurant.name %></h1>
 
+<table border="1">
+<tr>
+<td>Reservation time</td>
+<td>Party size</td>
+</tr>
+<tr>
 <% @reservations.each do |reservation| %>
-<p> 
-	Party Size <%= reservation.party_size %>
-	
+<td>
+	<%= reservation.seating_time %>
+</td>
+<td>
+	<%= reservation.party_size %>
+</td>
 
-</p>
 
 <% end %>
+</table>

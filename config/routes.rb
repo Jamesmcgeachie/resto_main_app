@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :cuisine_types, only: [:index, :show]
   get '/login' => 'sessions#new', as: :login
   post '/login' =>  'sessions#create', as: :post_login
-  delete '/loguout' => 'sessions#destroy', as: :logout
+  delete '/logout' => 'sessions#destroy', as: :logout
   resources :sessions, only: [:new, :create, :destroy]
   resources :restaurants do
     resources :reservations

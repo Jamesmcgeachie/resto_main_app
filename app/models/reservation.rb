@@ -1,7 +1,7 @@
 class Reservation < ActiveRecord::Base
 
 	belongs_to :restaurant
-	validate :capacity_exists
+	# validate :capacity_exists
 
 	def capacity_exists
 		existing_reservations = Reservation.where("restaurant_id = ? and seating_time > ? and seating_time < ?", self.restaurant_id, self.seating_time.at_beginning_of_hour, self.seating_time.at_end_of_hour)

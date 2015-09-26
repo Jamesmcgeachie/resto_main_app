@@ -1,3 +1,7 @@
 <h1><%= @restaurant.name %></h1>
 
 <p>Capacity: <%= @restaurant.capacity %></p>
+
+<a href = "/restaurants/<%= @restaurant.id %>/reservations/new">
+<p>Reserve Seats</p>
+</a>
