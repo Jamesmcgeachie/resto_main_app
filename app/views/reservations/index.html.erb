@@ -13,7 +13,24 @@
 <td>
 	<%= reservation.party_size %>
 </td>
-
+</tr>
+</table>
 
 <% end %>
+
+<br>
+<a href="/restaurants/<%= @restaurant.id %>/reservations/new"> 
+Create another reservation at <%= @restaurant.name %>
+</a>
+
+<br>
+<a href="/restaurants/">
+Go back to restaurant list
+</a>
+
+<br>
+<a href ="/cuisine_types/">
+Go back to cuisine types
+</a>
+
 </table>

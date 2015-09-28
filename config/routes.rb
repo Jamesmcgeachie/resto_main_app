@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get '/' => 'cuisine_types#index'
   resources :users, only: [:new, :create]
   resources :cuisine_types, only: [:index, :show]
   get '/login' => 'sessions#new', as: :login

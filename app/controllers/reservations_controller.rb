@@ -24,7 +24,7 @@ class ReservationsController < ApplicationController
 
 private
 	def sanitized_reservation_params
-    params.require(:reservation).permit(:seating_time, :party_size)
+    params.require(:reservation).permit(:seating_time, :party_size, :restaurant_id)
 end
 
 end
