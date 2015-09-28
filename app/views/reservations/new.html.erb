@@ -2,7 +2,7 @@
 
 <% if @reservation.errors.messages.any? %>
 	<% @reservation.errors.full_messages.each do |message| %>
-	<p>Error: <%= message %></p>
+	<p> Error: <%= message %></p>
 	<% end %>
 <% end %>
 
@@ -18,10 +18,6 @@
 <%= f.text_field :party_size %>
 </p>
 
-<p> Confirm by typing in the ID (<%= @restaurant.id %>)</p>
-<%= f.label :restaurant_id %> ID
-<%= f.text_field :restaurant_id %>
-</p>
 
 <p><%= f.submit %></p>
 

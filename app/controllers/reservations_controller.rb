@@ -14,7 +14,9 @@ class ReservationsController < ApplicationController
 	end
 
 	def create
+		@restaurant = Restaurant.find(params[:restaurant_id])
 		@reservation = Reservation.new(sanitized_reservation_params)
+		@reservation.restaurant_id = @restaurant.id
 		if @reservation.save
 			redirect_to restaurant_reservations_path	
 		else
@@ -24,7 +26,7 @@ class ReservationsController < ApplicationController
 
 private
 	def sanitized_reservation_params
-    params.require(:reservation).permit(:seating_time, :party_size, :restaurant_id)
+    params.require(:reservation).permit(:seating_time, :party_size)
 end
 
 end
