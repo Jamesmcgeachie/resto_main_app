@@ -1,6 +1,10 @@
 <h1><%= @restaurant.name %></h1>
 
 <p>Capacity: <%= @restaurant.capacity %></p>
+<p><%= image_tag @restaurant.photo.thumb.url %></td></p>
+
+<a href = "/restaurants/<%= @restaurant.id %>/edit">
+<p>Edit Restaurant</p>
 
 <a href = "/restaurants/<%= @restaurant.id %>/reservations/new">
 <p>Reserve Seats</p>

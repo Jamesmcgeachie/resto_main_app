@@ -1,0 +1,24 @@
+<h1> Edit Restaurant </h1>
+
+<%= form_for @restaurant do |f| %>
+
+	<p>
+	Name: <br>
+	<%= f.text_field :name %>
+	</p>
+
+	<p>
+	Capacity: <br>
+	<%= f.text_field :capacity %>
+	</p>
+
+	<p>
+	Photo: <br>
+	<%= image_tag(@restaurant.photo.url) if @restaurant.photo? %> <br>
+	<%= f.hidden_field :photo_cache %>
+	<%= f.file_field :photo %>
+	</p>
+
+	<p> <%= f.submit :save %> </p>
+
+<% end %>

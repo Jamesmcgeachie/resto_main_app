@@ -5,4 +5,5 @@ class Restaurant < ActiveRecord::Base
 
 	validates :name, :capacity, presence: true
 
+	mount_uploader :photo, PhotoUploader
 end
