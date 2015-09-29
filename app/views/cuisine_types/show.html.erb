@@ -1,6 +1,6 @@
 <h1><%= @cuisine_type.name %> Restaurants</h1>
 
-<table border = "1">
+<table class ="table" class="table-striped" border="1">
 	<tr>
 	<td>Restaurant name:</td>
 	<td>Capacity</td>
@@ -12,7 +12,7 @@
 	<%= restaurant.name %></td>
 	</a>
 	<td><%= restaurant.capacity %></td>
-	<td><%= restaurant.photo.inspect %></td>
+	<td><%= image_tag restaurant.photo.thumb %></td>
 	</tr>
 
 <% end %>
