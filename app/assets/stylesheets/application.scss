@@ -16,11 +16,20 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.navbar {
-	background-color: yellow;
+body {
+	 padding-top: 50px; 
+}
 
+
+.navbar {
+	background-color: orange;
 }
 
 .table-striped {
 	background-color: green;
+}
+
+.title {
+	font-size: 25px;
+	color: navy;
 }

@@ -3,22 +3,29 @@
 <head>
   <title>Resto</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<h1> RESTO </h1>
-
-
-<p class="navbar">
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+  <div class="link-container pull-left">
+  <p class="title">RESTO</p>
+  </div>
+  <div class="link-container pull-right">
 <% if current_user %>
-	<%= link_to "Logout", logout_path, method: :delete %>
+	Welcome <%= current_user.email %> |
+		<%= link_to "Logout", logout_path, method: :delete %> |
 	<% else %>
-		<%= link_to "Sign Up", new_user_path %>
-		<%= link_to "Login", login_path %>
+		<%= link_to "Sign Up", new_user_path %> |
+		<%= link_to "Login", login_path %> |
 	<% end %>
-	</p>
+	<a href="/">Home</a>
+	</div>
+  </div>
+</nav>
+
 
 <%= yield %>
 
