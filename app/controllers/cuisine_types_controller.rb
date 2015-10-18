@@ -6,6 +6,10 @@ class CuisineTypesController < ApplicationController
 
 	def show
 		@cuisine_type = CuisineType.find(params[:id])
+		@restaurants = @cuisine_type.restaurants
+		if params[:query]
+			@restaurants = Restaurant.where("name like ?", "%#{params[:query]}%")
+		end
 	end
 
 end
