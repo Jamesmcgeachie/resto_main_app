@@ -9,8 +9,7 @@
 <% @cuisine_type.restaurants.order(name: :asc).each do |restaurant| %>
 	<tr>
 	<td>
-	<a href="/restaurants/<%= restaurant.id %>">
-	<%= restaurant.name %></td>
+	<%= link_to restaurant.name, restaurant_path(restaurant) %>
 	</a>
 	<td><%= restaurant.capacity %></td>
 	<td><%= image_tag restaurant.photo.thumb %></td>
