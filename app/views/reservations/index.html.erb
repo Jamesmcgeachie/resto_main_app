@@ -5,8 +5,8 @@
 <td>Reservation time</td>
 <td>Party size</td>
 </tr>
-<tr>
 <% @reservations.each do |reservation| %>
+<tr>
 <td>
 	<%= reservation.seating_time %>
 </td>
@@ -14,9 +14,9 @@
 	<%= reservation.party_size %>
 </td>
 </tr>
-</table>
 
 <% end %>
+</table>
 
 <br>
 <a href="/restaurants/<%= @restaurant.id %>/reservations/new"> 
