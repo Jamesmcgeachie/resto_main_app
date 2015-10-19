@@ -2,7 +2,9 @@
 
 <%= form_tag "/restaurants/#{@restaurant.id}/reviews", method: :get, remote: true do %>
 	Enter Review:
-	<%= text_field_tag :query %>
+	<br></br>
+	<%= text_area_tag :query %>
+	<br></br>
 	<%= submit_tag "Add Review" %>
 <% end %>
 
