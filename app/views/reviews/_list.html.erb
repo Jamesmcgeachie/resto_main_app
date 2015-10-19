@@ -1,0 +1,11 @@
+<p>
+<% if @restaurant.reviews.count > 0 %>
+<ul>
+<% @restaurant.reviews.each do |review| %>
+	<li> <%= review.review_text %> </li>
+	<% end %>
+</ul>
+<% else %>
+	<p>No reviews</p>
+<% end %>
+</p>
