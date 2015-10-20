@@ -13,11 +13,14 @@ end
 def index
 end
 
+def show
+end
+
 
 private
 
 def review_params
-	params.require(:review).permit(:content)
+	params.require(:review).permit(:review_text)
 end
 
 def get_restaurant

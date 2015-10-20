@@ -10,23 +10,21 @@
 <p>Reserve Seats</p>
 </a>
 
-
+Review List:
 <div id="review-list">
-<% render partial: "/reviews/list" %>
+<%= render partial: "/reviews/list" %>
 </div>
 
+<p>Add a new review</p>
 <%= form_for [@restaurant, @review], remote: true do |f| %>
 
-    <label> Content: </label><br>
+    <label> Review Text: </label><br>
     <p>
-    <%= f.text_field :review_text %>
+    <%= f.text_area :review_text %>
     </p>
     
     <p>
     <%= f.submit "save review" %>
+    </p>
     
 <% end %>
-
-<a href = "/restaurants/<%= @restaurant.id %>/reviews">
-<p>View Reviews</p>
-</a>

@@ -2,7 +2,9 @@
 <% if @restaurant.reviews.count > 0 %>
 <ul>
 <% @restaurant.reviews.each do |review| %>
-	<li> <%= review.review_text %> </li>
+	<li>
+	<%= review.review_text %>
+	</li>
 	<% end %>
 </ul>
 <% else %>
