@@ -9,6 +9,8 @@ gem 'rails', '4.2.0'
 # Use postgres
 gem 'pg'
 
+gem 'rails_12factor', group: :production
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~> 3.3.5'
